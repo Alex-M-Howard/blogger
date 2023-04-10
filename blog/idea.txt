@@ -1,0 +1,14 @@
+BLOG Home
+ - Shows previous blog posts 
+ - Shows the most recent blog post at TOP 
+ - Add button to create new blog post
+ - Blog post will show author, title, date, and content
+
+ BLOG POST
+  - Shows the blog post
+  - Shows the comments
+  - Add button to create new comment
+  - Add button to edit blog post if user is the author
+  - Add button to delete blog post if user is the author
+
+  
