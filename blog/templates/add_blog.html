@@ -3,6 +3,9 @@
 {% block content %}
   <h1>Add Blog</h1>
   <p>This is where you will write to your heart's content</p>
-  <label for="new_post">New Post</label>
-  <input type="text" name="new_post">
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Post</button>
+  </form>
 {% endblock %}
