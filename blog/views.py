@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from .models import BlogPost, Comment, BlogPostForm, CommentForm
+from django.http import HttpResponseRedirect
 
 # Create your views here.
 def index(request):
@@ -9,4 +11,14 @@ def user_blogs(request):
     return render(request, 'my_blogs.html')
     
 def add(request):
-    return render(request, 'add_blog.html')
+    if request.method == 'POST':
+        form = BlogPostForm(request.POST)
+        if form.is_valid():
+            blog = form.save(commit=False)
+            blog.author = request.user
+            blog.save()
+            return HttpResponseRedirect('/blog/')
+    else: 
+        form = BlogPostForm()
+        
+    return render(request, 'add_blog.html', {'form': form})
