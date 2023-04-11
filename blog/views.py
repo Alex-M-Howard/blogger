@@ -1,11 +1,12 @@
 from django.shortcuts import render
 
 # Create your views here.
-def all_blogs(request):
+def index(request):
     return render(request, 'all_blogs.html')
   
-def my_blogs(request):
+def user_blogs(request):
+    # user_id = request.user.id
     return render(request, 'my_blogs.html')
     
-def add_blog(request):
+def add(request):
     return render(request, 'add_blog.html')
